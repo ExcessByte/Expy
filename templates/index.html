@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box title">
+            <h1 class="title-text">Expy.</h1>
+        </div>
+        <div class="box transaction-history">
+            <div class="header">
+              <h1 class="title">All transactions</h1>
+              <div class="btn-group">
+                <button class="add btn"><img src="https://img.icons8.com/fluency-systems-regular/48/plus-math.png" alt="plus-math"/></button>
+                <button class="filter btn"><img src="https://img.icons8.com/aaaaee/fluency-systems-regular/48/filter--v1.png" alt="filter--v1"/><span class="txt">Filter</span></button>
+              </div>
+            </div>
+            <div class="table">
+              {% for exp in expenses %}
+              <div class="card">
+                <div><p class="name">{{ exp.name }}</p></div>
+                {% if exp.type == 'income' %}
+                <div><p class="income-amount amount">{{ '+$' + exp.amount|string }}</p></div>
+                {% else %}
+                <div><p class="expense-amount amount">{{ '-$' + exp.amount|string }}</p></div>
+                {% endif %}
+              </div>
+              <div class="border-bottom"></div>
+              {% endfor %}
+            </div>
+        </div>
+        <div class="box account-info"></div>
+    </div>
+</body>
+</html>

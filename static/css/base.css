@@ -1,0 +1,145 @@
+/* Global Styles */
+body {
+  background: radial-gradient(circle, #18132b 0%, #101214 100%);
+  max-height: 100dvh;
+  font-family: 'Funnel Display', sans-serif;
+  color: #aaaaee;
+  user-select: none;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto repeat(2, 1fr);
+  grid-gap: 16px;
+  width: 80%;
+  height: 95%;
+}
+
+.container .title {
+  grid-area: 1 / 1 / 2 / 2;
+  .title-text {
+    margin: 0;
+  }
+}
+
+.box {
+  height: calc(100% - 60px);
+  width: calc(100% - 60px);
+  border-radius: 12px;
+  background-color: #c6c6f110;
+  backdrop-filter: blur(18px);
+  position: relative;
+  padding: 30px;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-image: url("data:image/svg+xml,%3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  box-shadow: inset 2px 2px 2px #c8d1e9,
+              inset -2px -2px 2px #ccd4eb;
+}
+
+.transaction-history { 
+  grid-area: 1 / 2 / 4 / 3; 
+}
+
+.transaction-history .header {
+  width: calc(100% - 50px);
+  margin: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-history .table {
+  margin: 25px;
+  width: calc(100% - 50px);
+}
+
+.transaction-history .btn-group {
+  display: flex;
+}
+
+.transaction-history .btn {
+  padding: 10px 15px;
+  border-radius: 20px;
+  display: flex;
+  font-size: 16px;
+  font-family: Funnel Display;
+  align-items: center;
+  margin: 3px;
+  border: none;
+  img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.filter img {
+    padding-right: 5px;
+}
+.filter {
+    color: #aaaaee;
+    border: 2px solid #aaaaee!important;
+    background-color: transparent;
+}
+
+.add {
+  background: #aaaaee;
+}
+
+.account-info { 
+  grid-area: 2 / 1 / 4 / 2; 
+}
+
+/* ----------------------------------- */
+/* Block: card (for individual transactions) */
+/* ----------------------------------- */
+.card {
+  padding: 5px 35px;
+  border-radius: 25px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #aaaaee10;
+}
+
+.table .border-bottom {
+  border: 1px solid #ffccff20;
+  width: 93%;
+  margin: auto;
+  border-radius: 2px;
+}
+.table .border-bottom:last-of-type {
+  display: none;
+}
+
+.income-amount {
+  color: #92b074;
+}
+
+.expense-amount {
+  color: #f65652;
+}
+
+.name {
+  font-size: 22px;
+}
+
+.amount {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
