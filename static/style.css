@@ -1,0 +1,239 @@
+body {
+	font-family: Funnel Display, sans-serif;
+	margin: 2em;
+	background-color: #1a1a1a;
+	color: #e0e0e0;
+}
+
+.container {
+	max-width: 900px;
+	margin: auto;
+	background: rgba(45, 45, 45, 0.4);
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	border: 1px solid rgba(80, 80, 80, 0.2);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	padding: 20px;
+	border-radius: 12px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid rgba(80, 80, 80, 0.2);
+}
+
+h1 {
+	color: #f0f0f0;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.summary {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	padding: 1.5em;
+	margin-bottom: 2em;
+	background: rgba(60, 60, 60, 0.3);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 12px;
+	border: 1px solid rgba(80, 80, 80, 0.2);
+}
+
+.summary-item h3 {
+	margin-top: 0;
+	color: #c0c0c0;
+}
+
+.summary-income {
+	color: #4CAF50;
+	font-weight: bold;
+}
+
+.summary-expense {
+	color: #F44336;
+	font-weight: bold;
+}
+
+.summary-balance {
+	color: #90CAF9;
+	font-weight: bold;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 1em;
+	background: rgba(60, 60, 60, 0.2);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+th, td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid rgba(80, 80, 80, 0.2);
+	color: #e0e0e0;
+	word-break: break-word;
+}
+
+th {
+	background-color: rgba(40, 40, 40, 0.6);
+	color: #c0c0c0;
+}
+
+.expense-amount {
+	color: #F44336;
+}
+
+.income-amount {
+	color: #4CAF50;
+}
+
+.add-button,
+.edit-button,
+.delete-button {
+	background: rgba(80, 80, 80, 0.5);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(100, 100, 100, 0.3);
+	text-decoration: none;
+	color: white;
+	padding: 10px 15px;
+	border-radius: 15px;
+	cursor: pointer;
+	font-size: 1em;
+	transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.add-button:hover,
+.edit-button:hover,
+.delete-button:hover {
+	background: rgba(100, 100, 100, 0.7);
+	transform: scale(1.05);
+}
+
+.delete-button {
+	background-color: #dc3545;
+	border: 1px solid #dc3545;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(5px);
+}
+
+.modal-content {
+	background: rgba(30, 30, 30, 0.9);
+	border: 1px solid rgba(80, 80, 80, 0.3);
+	margin: 10% auto;
+	padding: 25px;
+	width: 90%;
+	max-width: 500px;
+	border-radius: 12px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+	color: #f0f0f0;
+	float: right;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+	color: #aaa;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.form-group {
+	margin-bottom: 1.5em;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.5em;
+	color: #c0c0c0;
+}
+
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select {
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.5);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 8px;
+	color: #111111;
+	font-family: inherit;
+}
+
+button[type="submit"] {
+	background-color: #007bff;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1em;
+	width: 100%;
+	transition: background-color 0.01s ease;
+}
+
+button[type="submit"]:hover {
+	background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+	body {
+			margin: 1em;
+	}
+
+	.header {
+			flex-direction: column;
+			gap: 10px;
+			text-align: center;
+	}
+
+	.summary {
+			flex-direction: column;
+			gap: 1em;
+	}
+
+	table {
+			display: block;
+			overflow-x: auto;
+			white-space: nowrap;
+	}
+
+	.add-button {
+			width: 100%;
+	}
+
+	.delete-button {
+			padding: 8px 10px;
+			font-size: 0.9em;
+	}
+
+	.modal-content {
+			margin: 20% auto;
+			width: 95%;
+	}
+}
